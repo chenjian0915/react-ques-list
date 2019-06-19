@@ -7,7 +7,7 @@ function App() {
   return (
       <div className="App">
         <Routes />
-        <Link to="/list">list</Link>
+        {/*<Link to="/list/54395/123123/123123">list</Link>*/}
       </div>
   );
 }
