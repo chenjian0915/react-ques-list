@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import { List, Pagination, Empty,Spin } from 'antd';
+import { List, Pagination, Empty, Spin, BackTop } from 'antd';
 import {getListData, setSpinOption} from './store/actionCreator'
 import QuesTitle from './components/quesTitle'
 import HighChoice from './components/highChoice'
@@ -113,6 +113,7 @@ class QuestionList extends Component {
                 {this.renderList()}
                 <VideoModal />
                 <div>{this.props.spinStatus}</div>
+                <BackTop />
             </div>
         )
     }
