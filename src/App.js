@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import Routes from './router/'
-import {Link} from 'react-router-dom'
 
 function App() {
   return (
