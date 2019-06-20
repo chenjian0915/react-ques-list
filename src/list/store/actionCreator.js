@@ -1,4 +1,5 @@
 import axios from 'axios'
+import serverList from '../../server/serverList'
 import {
     SET_LIST_DATA,
     SET_SPIN_STATUS,
@@ -6,10 +7,11 @@ import {
 } from './actionType'
 
 export const getListData = (obj) => {
-    console.log(obj)
     return (dispatch) => {
-        axios.get('/api/quesList.json').then((response) => {
-            dispatch(setListData(response.data.data))
+        axios.get(`${serverList.listUrl}mntk/v1/admin/checkpage`, {
+            params: obj
+        }).then((response) => {
+            dispatch(setListData(response.data))
             dispatch(setSpinOption(false))
         }).catch((err) => {
             console.log(err)
