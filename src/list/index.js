@@ -57,28 +57,6 @@ class QuestionList extends Component {
         if (this.props.quesList.length === 0) return <Empty description="该课程暂未传题" />
         return this.props.quesList.map((item, index) => {
             let NowComponent = activityTypeElement[item.activityType]
-            // switch (item.activityType) {
-            //     case 'HighChoice':
-            //         NowComponent = HighChoice;
-            //         break;
-            //     case 'HighSpeech':
-            //         NowComponent = HighSpeech;
-            //         break;
-            //     case 'speechVote':
-            //         NowComponent = SpeechVote;
-            //         break;
-            //     case 'redEnvelope':
-            //         NowComponent = RedEnvelope;
-            //         break;
-            //     case 'flashCard':
-            //         NowComponent = FlashCard;
-            //         break;
-            //     case 'oneVsOne':
-            //         NowComponent = OneVsOne;
-            //         break;
-            //     default:
-            //         break;
-            // }
 
             return (
                 <List
@@ -93,7 +71,7 @@ class QuestionList extends Component {
 
     pageChange (page) {
         this.setState({
-            currentPage: page
+            currentPage: page - 1
         }, () => {
             this.props.setListData(this.state)
         });
@@ -106,13 +84,14 @@ class QuestionList extends Component {
     render() {
         return (
             <div className="question-list-wrapper">
-                <Spin spinning={this.props.spinStatus} delay={500} />
+                <Spin spinning={this.props.spinStatus} delay={500}>
                 <div className="pagination-wrapper">
                     <Pagination defaultCurrent={1} itemRender={QuestionList.itemRender} total={this.props.total} onChange={this.pageChange} />
                 </div>
                 {this.renderList()}
                 <VideoModal />
                 <div>{this.props.spinStatus}</div>
+                </Spin>
                 <BackTop />
             </div>
         )
@@ -132,7 +111,7 @@ const mapDispatchToProps = dispatch => {
         setListData: (state) => {
             dispatch(setSpinOption(true));
             dispatch(getListData({
-                productId: state.productId,
+                product: state.productId,
                 courseId: state.courseId,
                 chapterStartTime: state.chapterStartTime,
                 dataVersion: '1.0.0.0',

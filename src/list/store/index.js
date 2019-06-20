@@ -18,7 +18,7 @@ const reducer = (state = defaultState, action) => {
         case SET_LIST_DATA:
             return {
                 ...state,
-                questionList: action.data.list,
+                questionList: action.data.dataList,
                 total: action.data.total
             };
         case SET_VIDEO_OPTION:

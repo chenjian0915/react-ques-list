@@ -9,7 +9,7 @@ class OneVsOne extends Component {
         const {commonVideo} = this.props.itemData;
         return (
             commonVideo.perfectList.map((item, index) => {
-                return <p key={index}><Icon style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />prefect {index + 1}</p>
+                return <p key={index}><Icon onClick={this.props.setVideoOption} data-src={item} style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />prefect {index + 1}</p>
             })
         )
     }
@@ -25,9 +25,9 @@ class OneVsOne extends Component {
                     <span className="topic-left-title">{index + 1}、{item.quesTitle}</span>
                     <img className="flashCard-topic-img" src={item.answerData.answerImg} alt=""/>
                 </p>
-                <p><Icon style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />{item.quesTitle}</p>
-                <p><Icon style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />{item.quesTitle}-good-again</p>
-                <p><Icon style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />{item.quesTitle}-normal-again</p>
+                <p><Icon onClick={this.props.setVideoOption} data-src={item.answerData.follow} style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />{item.quesTitle}</p>
+                <p><Icon onClick={this.props.setVideoOption} data-src={item.answerData.good} style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />{item.quesTitle}-good-again</p>
+                <p><Icon onClick={this.props.setVideoOption} data-src={item.answerData.normal}  style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />{item.quesTitle}-normal-again</p>
             </aside>
         ))
     }
@@ -41,7 +41,7 @@ class OneVsOne extends Component {
                         通用视频
                     </p>
                     <p>
-                        <Icon data-src={'http://www.baidu.com'} onClick={this.props.setVideoOption} style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />try again
+                        <Icon data-src={this.props.itemData.commonVideo.tryAgain} onClick={this.props.setVideoOption} style={{fontSize: '24px', verticalAlign: 'middle', marginRight: '6px'}} type="play-circle" theme="filled" />try again
                     </p>
                     {this.renderCommonElement()}
                 </div>
