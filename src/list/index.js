@@ -18,7 +18,7 @@ class QuestionList extends Component {
         let {chapterStartTime, courseId} = this.props.match.params;
         let productId = this.props.match.params.chapterId;
         this.state = {
-            currentPage: 1,
+            currentPage: 0,
             chapterStartTime,
             courseId,
             productId

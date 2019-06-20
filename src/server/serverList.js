@@ -3,10 +3,13 @@ console.log(env)
 
 const serverList = {
     development: {
-        listUrl: 'http://test.getList.com/'
+        listUrl: 'http://10.2.42.124:8020/'
+    },
+    test: {
+        listUrl: 'https://test-api-o-en.speiyou.cn/'
     },
     production: {
-        listUrl: 'http://getList.com/'
+        listUrl: 'https://test-api-o-en.speiyou.cn/'
     }
 }
 
