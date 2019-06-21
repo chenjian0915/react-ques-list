@@ -86,7 +86,7 @@ class QuestionList extends Component {
             <div className="question-list-wrapper">
                 <Spin spinning={this.props.spinStatus} delay={500}>
                 <div className="pagination-wrapper">
-                    <Pagination defaultCurrent={1} itemRender={QuestionList.itemRender} total={this.props.total} onChange={this.pageChange} />
+                    <Pagination defaultCurrent={1} itemRender={QuestionList.itemRender} pageSize={20} total={this.props.total} onChange={this.pageChange} />
                 </div>
                 {this.renderList()}
                 <VideoModal />
