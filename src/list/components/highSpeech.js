@@ -10,7 +10,7 @@ class HighSpeech extends Component {
                     <span className="float-r activity-count">积分：{answerInfo.integral}</span>
                     <span className="topic-left-title">{answerInfo.quesTitle}</span>
                 </p>
-                <p className="topic-answer">{answerInfo.answerList[0]}</p>
+                <p className="topic-answer"  style={{color: '#4cefdf'}}>{answerInfo.answerList[0]}</p>
             </section>
         )
     }

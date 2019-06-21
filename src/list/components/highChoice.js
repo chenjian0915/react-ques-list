@@ -12,7 +12,7 @@ class HighChoice extends Component {
                     <span className="topic-left-title">{answerInfo.quesTitle}</span>
                 </p>
                 {answerInfo.answerList.map((item, index) => (
-                    <p className="topic-answer" key={index}>{String.fromCharCode(65 + index)}、{item}</p>
+                    <p className="topic-answer" style={answerInfo.answer === String.fromCharCode(65 + index)? {color: '#4cefdf'}: {}} key={index}>{String.fromCharCode(65 + index)}、{item}</p>
                 ))}
             </section>
         )
