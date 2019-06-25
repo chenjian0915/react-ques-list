@@ -73,9 +73,6 @@
 .topic-item-wrapper .topic-left-title {
     float: left;
     width: 700px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 .topic-item-wrapper .activity-count {
     width: 130px;

@@ -20,7 +20,7 @@ class VideoModal extends Component {
                     centered={true}
                     footer={null}
                 >
-                    <video src={this.props.videoSrc} className="videoPlayer"></video>
+                    <video src={this.props.videoSrc}  controls="controls" autoPlay={true} className="videoPlayer"></video>
                 </Modal>
             </div>
         )
