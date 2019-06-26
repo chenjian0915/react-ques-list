@@ -8,7 +8,7 @@ class FlashCard extends Component {
                         <span className="float-r answer-duration">答题时长：{item.answerDuration}s</span>
                         <span className="float-r activity-count">积分：固定预设值</span>
                         <span className="topic-left-title">{index + 1}、{item.quesTitle}</span>
-                        <img className="flashCard-topic-img" src={item.answerList[0]} alt=""/>
+                        <img className="flashCard-topic-img" src={item.answerList[0]} alt="无图片"/>
                     </p>
                 ))
     }

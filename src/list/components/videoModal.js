@@ -14,11 +14,12 @@ class VideoModal extends Component {
         return (
             <div>
                 <Modal
-                    title="Basic Modal"
+                    title="查看视频"
                     visible={this.props.visible}
                     onCancel={this.props.closeModal}
                     centered={true}
                     footer={null}
+                    className="video-model"
                 >
                     <video src={this.props.videoSrc}  controls="controls" autoPlay={true} className="videoPlayer"></video>
                 </Modal>
