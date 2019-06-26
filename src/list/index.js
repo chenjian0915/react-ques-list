@@ -88,7 +88,10 @@ class QuestionList extends Component {
                 <div className="pagination-wrapper">
                     <Pagination defaultCurrent={1} itemRender={QuestionList.itemRender} pageSize={20} total={this.props.total} onChange={this.pageChange} />
                 </div>
-                {this.renderList()}
+                <div className="render-list-wrapper">
+                    {this.renderList()}
+                </div>
+
                 <VideoModal />
                 <div>{this.props.spinStatus}</div>
                 </Spin>
