@@ -11,6 +11,7 @@ export const getListData = (obj) => {
         axios.get(`${serverList.listUrl}mntk/v1/admin/checkpage`, {
             params: obj
         }).then((response) => {
+            window.scrollTo(0, 0)
             dispatch(setListData(response.data))
             dispatch(setSpinOption(false))
         }).catch((err) => {
