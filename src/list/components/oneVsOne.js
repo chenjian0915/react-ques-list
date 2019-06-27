@@ -57,11 +57,12 @@ class OneVsOne extends Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         setVideoOption: (e) => {
-            console.log(e)
-            dispatch(setVideoOption({
-                visible: true,
-                videoSrc: e.currentTarget.getAttribute('data-src')
-            }))
+            if (e.currentTarget.getAttribute('data-src')) {
+                dispatch(setVideoOption({
+                    visible: true,
+                    videoSrc: e.currentTarget.getAttribute('data-src')
+                }))
+            }
         }
     }
 };
