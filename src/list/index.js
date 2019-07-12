@@ -4,6 +4,7 @@ import { List, Pagination, Empty, Spin, BackTop } from 'antd';
 import {getListData, setSpinOption} from './store/actionCreator'
 import QuesTitle from './components/quesTitle'
 import HighChoice from './components/highChoice'
+import ChoiceVote from './components/choiceVote'
 import HighSpeech from './components/highSpeech'
 import SpeechVote from './components/speechVote'
 import RedEnvelope from './components/redEnvelope'
@@ -44,6 +45,7 @@ class QuestionList extends Component {
             4: '拼手气红包',
             104: '在线闪卡',
             103: '在线1v1语音题',
+            106: '在线选择投票题',
         };
         const activityTypeElement = {
             101: HighChoice,
@@ -52,6 +54,7 @@ class QuestionList extends Component {
             4: RedEnvelope,
             104: FlashCard,
             103: OneVsOne,
+            106: ChoiceVote
         };
 
         if (this.props.quesList.length === 0) return <Empty description="该课程暂未传题" />

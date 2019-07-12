@@ -9,7 +9,7 @@ const serverList = {
         listUrl: 'https://test-api-o-en.speiyou.cn/'
     },
     production: {
-        listUrl: 'https://api-o-en.speiyou.com/'
+        listUrl: 'https://test-api-o-en.speiyou.cn/'
     }
 }
 
