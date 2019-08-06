@@ -1,9 +1,8 @@
-import {combineReducers} from 'redux'
-import quesList from '../list/store/'
-
+import { combineReducers } from 'redux';
+import quesList from '../list/store';
 
 const reducer = combineReducers({
-    quesList: quesList
+	quesList,
 });
 
-export default reducer
+export default reducer;
